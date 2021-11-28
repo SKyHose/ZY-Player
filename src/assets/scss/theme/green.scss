@@ -1,37 +1,10 @@
 .theme-green{
   background-color: var(--g-bgc-1);
-  .el-pagination{
-    background-color: var(--g-bgc-1);
-    color: var(--g-fc-1);
-    .el-pagination__total, .el-pagination__jump, .el-input__inner{
-      color: var(--g-fc-1);
-      background-color: var(--g-bgc-1);
-    }
-    .el-input__inner{
-      border-color: var(--g-c-3);
-    }
-    .el-pager{
-      .number{
-        background-color: var(--g-bgc-1);
-      }
-      .number:hover{
-        color: var(--g-c-8);
-      }
-      .active{
-        color: var(--g-c-9);
-      }
-    }
-    .more, .btn-next, .btn-prev{
-      background-color: var(--g-bgc-1);
-      &:hover{
-        color: var(--g-c-8);
-      }
-    }
-  }
   .zy-select{
     color: var(--g-fc-1);
     background-color: var(--g-bgc-1);
     box-shadow: var(--g-bsc);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     &:hover{
       box-shadow: var(--g-bsc-hover);
     }
@@ -39,6 +12,7 @@
       background-color: var(--g-bgc-1);
       box-shadow: var(--g-bsc);
       ul{
+        overflow-y: scroll;
         li{
           &:hover{
             background-color: var(--g-c-1);
@@ -49,49 +23,33 @@
         }
       }
     }
-  }
-  .zy-table{
-    color: var(--g-fc-2);
-    .tHead{
+    .vs-input{
+      color: var(--g-fc-1);
       background-color: var(--g-bgc-1);
-      border-bottom-color: var(--g-c-3);
-    }
-    .tBody{
-      border-bottom-color: var(--g-c-3);
-      ul{
-        li{
-          border-bottom-color: var(--g-c-2);
-          &:hover{
-            animation: d-tableHoverAni 0.2s ease both;
-            @keyframes d-tableHoverAni {
-              to{
-                box-shadow: var(--g-bsc-hover);
-              }
-            }
-          }
-          span{
-            &.btn:hover{
-              color: var(--g-fc-3)
-            }
-          }
+      input{
+        color: var(--g-fc-1);
+        &::-webkit-input-placeholder{
+          color: var(--g-fc-1);
         }
       }
     }
-    .tFooter{
-      .tFooter-span{
-        color: var(--g-fc-1);
-      }
+  }
+  .zy-input{
+    color: var(--g-fc-1);
+    background-color: var(--g-bgc-1);
+    input{
+      color: var(--g-fc-1);
     }
   }
   .zy-scroll{
     &:hover{
       &::-webkit-scrollbar-thumb {
         box-shadow: var(--g-bsc-scroll);
-        background: var(--g-c-3);
+        background: var(--g-c-5);
       }
       &::-webkit-scrollbar-track {
         box-shadow: var(--g-bsc-scroll);
-        background: var(--bgc);
+        background: var(--g-bgc-1);
       }
     }
   }
@@ -112,6 +70,7 @@
         background-color: var(--g-c-2);
       }
       &.active{
+        background-color: var(--g-bgc-2);
         svg{
           stroke: var(--g-c-0);
           stroke-width: 2;
@@ -123,15 +82,21 @@
   .frame{
     span{
       &.min{
+        background-color: #32dc36;
+      }
+      &.max{
         background-color: #ffbe2a;
       }
       &.close{
         background-color: #ff5f56;
       }
+      &.top{
+        background-color: #f3bab7;
+      }
     }
   }
   .detail{
-    color: var(--g-fc-1);
+    color: var(--g-fc-1) !important;
     background-color:var(--g-bgc-1);
     box-shadow: var(--g-bsc-2);
     .detail-content{
@@ -146,10 +111,17 @@
         }
       }
       .detail-body{
-        .info, .desc, .m3u8_urls, .mp4_urls{
+        .info, .desc, .m3u8, .operate{
           border-color: var(--g-c-2);
         }
-        .m3u8_urls, .mp4_urls{
+        .operate{
+          span{
+            &:hover{
+              color: var(--g-fc-2);
+            }
+          }
+        }
+        .m3u8{
           .box{
             span{
               border-color: var(--g-c-5);
@@ -159,51 +131,62 @@
                 border-color: var(--g-c-8);
               }
             }
+            .selected {
+              background-color: var(--g-c-5);
+              &:hover{
+                background-color: var(--g-c-5);
+              }
+            }
+          }
+          .show-picture{
+            color: var(--g-fc-1);
+            .card{
+              background-color: var(--g-bgc-3);
+              box-shadow: var(--g-bsc);
+              transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+              &:hover{
+                box-shadow: var(--g-bsc-hover);
+              }
+            }
           }
         }
       }
-    }
-  }
-  .film{
-    .top{
-      .search{
-        background-color: var(--g-bgc-1);
-        box-shadow: var(--g-bsc);
-        &:hover{
-          box-shadow: var(--g-bsc-hover);
-        }
-        svg{
-          stroke: var(--g-c-0);
-          stroke-width: 1;
-          fill: none;
-        }
-        .search-box{
-          background-color: var(--g-bgc-1);
-        }
-        &.active{
-          box-shadow: var(--g-bsc-hover);
-          svg{
-            stroke-width: 1.5;
-            fill: var(--g-c-2);
-          }
-        }
-        input{
-          color: var(--g-fc-1);
-        }
-      }
-    }
-    .middle{
-      background-color: var(--g-bgc-1);
-      box-shadow: var(--g-bsc);
     }
   }
   .play{
     background-color: var(--g-bgc-1);
     box-shadow: var(--g-bsc);
+    .el-input{
+      input{
+        background-color: var(--g-bgc-1);
+        border: 1px solid var(--g-bgc-1);
+        color: var(--g-fc-2);
+      }
+    }
     .title{
       color: var(--g-fc-1);
+      .right {
+        svg {
+          fill: var(--g-fc-1);
+        }
+      }
     }
     .box{
+      .title{
+        .right{
+          color: var(--g-fc-2);
+          svg{
+            stroke: var(--g-c-5);
+            stroke-width: 1;
+            fill: none;
+            &:hover{
+              stroke: var(--g-c-8);
+              stroke-width: 1.5;
+              fill: var(--g-c-2);
+            }
+          }
+        }
+      }
       .more{
         span{
           svg{
@@ -224,6 +207,10 @@
               stroke-width: 2;
               fill: var(--g-c-3);
             }
+          }
+          &.last-tip {
+            color: var(--g-fc-1);
+            font-size: 14px;
           }
         }
       }
@@ -254,6 +241,17 @@
               background-color: var(--g-c-2);
               color: var(--g-fc-3);
             }
+            &:hover{
+              background-color: var(--g-c-3);
+            }
+          }
+        }
+        .list-channels{
+          .btn{
+            color: var(--g-fc-1);
+            &:hover{
+              text-decoration:underline;
+            }
           }
         }
         .list-history{
@@ -283,14 +281,6 @@
         }
       }
     }
-    .play-mask{
-      background-color: var(--g-bgc-1);
-      color: var(--g-fc-1);
-    }
-  }
-  .star{
-    background-color: var(--g-bgc-1);
-    box-shadow: var(--g-bsc);
   }
   .setting{
     background-color: var(--g-bgc-1);
@@ -303,12 +293,18 @@
         }
       }
     }
+    .view, .search, .shortcut, .site{
+      .title{
+        color: var(--g-fc-1);
+      }
+    }
     .theme{
       .title{
         color: var(--g-fc-1);
       }
       .theme-item{
         box-shadow: var(--g-bsc);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
         &:hover{
           box-shadow: var(--g-bsc-hover);
           .theme-name{
@@ -326,6 +322,10 @@
       }
       .qrcode-item{
         box-shadow: var(--g-bsc);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        &:hover{
+          box-shadow: var(--g-bsc-hover);
+        }
       }
     }
   }
@@ -341,6 +341,133 @@
     }
     .share-mask{
       background-color: var(--g-bgc-1);
+    }
+  }
+  .history{
+    background-color: var(--g-bgc-1);
+    box-shadow: var(--g-bsc);
+  }
+
+  // Page of list using table and picture
+  .listpage{
+    color: var(--g-fc-2);
+    .listpage-header-divider{
+      background-color: var(--g-bgc-1);
+      .el-divider__text {
+        background-color: var(--g-bgc-2);
+      }
+      .el-button{
+        background-color: var(--g-bgc-2);
+        color: var(--g-fc-2);
+        &:hover{
+          color: var(--g-fc-3)
+        }
+      }
+    }
+    .listpage-header, .toolbar{
+      border-bottom-color: var(--g-c-3);
+      .btn{
+        &:hover{
+          color: var(--g-fc-3)
+        }
+      }
+      .el-button{
+        background-color: var(--g-bgc-2);
+        color: var(--g-fc-2);
+        &:hover{
+          color: var(--g-fc-3)
+        }
+      }
+      .el-input{
+        input{
+          background-color: var(--g-bgc-1);
+          border: 1px solid var(--g-bgc-1);
+          color: var(--g-fc-2);
+        }
+      }
+      .el-input-group__prepend{
+        background-color: var(--g-bgc-1);
+      }
+      .popper {
+        color: var(--g-fc-1);
+        background-color: var(--g-bgc-1);
+        box-shadow: var(--g-bsc);
+        li {
+          color: var(--g-fc-1);
+          background-color: var(--g-bgc-1);
+          &:hover{
+            background-color: var(--g-bgc-2);
+          }
+        }
+      }
+      .popper__arrow, .popper__arrow::after{
+        border-bottom-color: var(--g-bgc-1);
+      }
+    }
+    .listpage-body{
+      color: var(--g-fc-1);
+      background-color: var(--g-bgc-1);
+      &:hover{
+        &::-webkit-scrollbar-thumb {
+          box-shadow: var(--g-bsc-scroll);
+          background: var(--g-c-5);
+        }
+        &::-webkit-scrollbar-track {
+          box-shadow: var(--g-bsc-scroll);
+          background: var(--g-bgc-1);
+        }
+      }
+      /* 设置el-table的样式*/
+      .show-table{
+        .el-table{
+          color: var(--g-fc-1);
+          background-color: var(--g-bgc-1);
+        }
+        .el-table__body-wrapper{
+          &:hover{
+            &::-webkit-scrollbar-thumb {
+              box-shadow: var(--g-bsc-scroll);
+              background: var(--g-c-5);
+            }
+            &::-webkit-scrollbar-track {
+              box-shadow: var(--g-bsc-scroll);
+              background: var(--g-bgc-1);
+            }
+          }
+        }
+       .el-input{
+          input{
+            background-color: var(--g-bgc-2);
+            border: 1px solid var(--g-bgc-2);
+            color: var(--g-fc-1);
+          }
+        }
+        .el-table__header th, .el-table__header tr, .el-table__body td,.el-table__body th{
+          color: var(--g-fc-1);
+          background-color: var(--g-bgc-1);
+          border-bottom-color: var(--g-c-2);
+        }
+        .el-table--enable-row-hover .el-table__body tr:hover>td{
+          background-color: var(--g-bgc-2);
+        }
+        .el-button{
+          color: var(--g-fc-1);
+          &:hover{
+            color: var(--g-fc-3)
+          }
+        }
+      }
+      .show-picture{
+        color: var(--g-fc-1);
+        .card{
+          background-color: var(--g-bgc-3);
+          box-shadow: var(--g-bsc);
+          transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+          &:hover{
+            box-shadow: var(--g-bsc-hover);
+          }
+        }
+      }
     }
   }
 }
